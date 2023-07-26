@@ -1,0 +1,249 @@
+body{
+    font-family: 'Cairo', sans-serif;
+}
+::selection{
+    color: white;
+    background-color: var(--primary-color);
+}
+/* S t a r t  G l o b a l  R u l e s  */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style:none ;
+}
+button{
+    cursor: pointer;
+    outline: none;
+}
+/* F i n i s h  G l o b a l  R u l e s  */
+
+/* V a r i a b l e s */
+:root {
+    --primary-color:#9896F1;
+}
+/* V a r i a b l e s */
+
+
+/* T h e  C o n t a i n e r  */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  /* Small */
+@media (min-width: 768px) {
+    .container {
+    width: 750px;
+    }
+}
+  /* Medium */
+@media (min-width: 992px) {
+    .container {
+    width: 970px;
+    }
+}
+  /* Large */
+@media (min-width: 1200px) {
+    .container {
+    width: 1170px;
+    }
+}
+/* T h e  C o n t a i n e r  */
+
+
+/* S t a r t  S t y l e  H e a d e r  */
+header {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+
+}
+
+/* F i n i s h  S t y l e  H e a d e r  */
+
+
+/* S t a r t  S t y l e  N a v b a r */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+
+}
+.nav-logo img{
+    width: 200px;
+    height: 80px;
+
+}
+.links{
+    display: flex;
+}
+.link {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.link a {
+    color: #333;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.link a:hover {
+color: var(--primary-color);
+}
+li a.active-link{
+    color: var(--primary-color);
+
+}
+.link:last-child{
+    margin-top: 23px;
+}
+
+/* B u r g e r  I c o n */
+.menuToggle{
+}
+#checkbox {
+    display: none;
+}
+
+.toggle {
+    position: relative;
+    width: 25px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+    height: calc(4px * 3 + 11px * 2);
+    margin-top: 10px;
+}
+
+.bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: calc(4px / 2);
+    background: var(--primary-color);
+    color: inherit;
+    opacity: 1;
+    transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+  }
+  
+  /***** Tornado Animation *****/
+  
+  .bar--top {
+    bottom: calc(50% + 5px + 4px/ 2);
+    transition-property: bottom,transform;
+    transition-delay: calc(0s + 0.35s) * .6;
+  }
+  
+  .bar--middle {
+    top: calc(50% - 4px/ 2);
+    transition-property: opacity,transform;
+    transition-delay: calc(0s + 0.35s * .3);
+  }
+  
+  .bar--bottom {
+    top: calc(50% + 5px + 4px/ 2);
+    transition-property: top,transform;
+    transition-delay: 0s;
+  }
+  
+  #checkbox:checked + .toggle .bar--top {
+    transform: rotate(-135deg);
+    transition-delay: 0s;
+    bottom: calc(50% - 4px/ 2);
+  }
+  
+  #checkbox:checked + .toggle .bar--middle {
+    opacity: 0;
+    transform: rotate(-135deg);
+    transition-delay: calc(0s + 0.35s * .3);
+  }
+  
+  #checkbox:checked + .toggle .bar--bottom {
+    top: calc(50% - 4px/ 2);
+    transform: rotate(-225deg);
+    transition-delay: calc(0s + 0.35s * .6);
+  }
+/* B u r g e r  I c o n */
+
+
+
+/* F i n i s h  S t y l e  N a v b a r */
+
+
+/* M a t c h i n g F o r  T h e  H e a d e r */
+@media (max-width:1200px) {
+
+    .link {
+        margin-left: 14px ;
+    }
+    .link a {
+        font-size: 17px;
+    }
+    .nav-logo img{
+        width: 120px;
+        height: 80px;
+    
+    }
+}
+
+
+@media(max-width:992px){
+    .link a {
+        font-size: 14px;
+    }
+    .nav-logo img{
+        width: 80px;
+        height: 70px;
+}
+}
+#menuToggle{
+    display: none;
+}
+@media (max-width:768px) {
+    .navbar {
+        width: 89vw;
+        position: relative;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 250px ; */
+        z-index: 5;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .link{
+        margin-left: 0;
+        width: 100%;
+    }
+    .link:last-child{
+        display: none;
+    }
+#menuToggle{
+    display: block;
+}
+.nav-logo img{
+    width: 160px;
+    height: 60px;
+}
+}
+/* M a t c h i n g F o r  T h e  H e a d e r */
+
